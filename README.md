@@ -73,12 +73,41 @@ git clone https://github.com/opencv/opencv_contrib
 cd ~/opencv
 mkdir build
 cd build
+workon cv
 ```
 Configurar el CMake. La configuracion de mi CMake segun mis rutas:
 ```
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+    -D PYTHON3_LIBRARY=/usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/config-3.7m-darwin/libpython3.7.dylib \
+    -D PYTHON3_INCLUDE_DIR=/usr/local/Cellar/python/3.7.1/Frameworks/Python.framework/Versions/3.7/include/python3.7m/ \
+    -D PYTHON3_EXECUTABLE=/Users/lordlobete/.virtualenvs/cv/bin/python3  \
+    -D BUILD_opencv_python2=OFF \
+    -D BUILD_opencv_python3=ON \
+    -D INSTALL_PYTHON_EXAMPLES=ON \
+    -D INSTALL_C_EXAMPLES=ON \
+    -D BUILD_EXAMPLES=ON ..
 ```
 # 8. Compilar e instalar Opencv
 ```
+workon cv
 make -j4
 sudo make install
+```
+# 9.Renombrar y crear enlace simbólico a Opencv y python
+```
+deactivate
+cd /usr/local/python/cv2/python-3.7
+sudo mv cv2.cpython-37m-darwin.so cv2.so
+cd .virtualenvs/cv/lib/python3.7/site-packages/
+ln -s /usr/local/python/cv2/python-3.7/cv2.so cv2.so
+```
+# 10. Verificar la version de Opencv
+```
+workon cv
+python
+import cv2
+cv2.__version__
+deactivate
 ```
