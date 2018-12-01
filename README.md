@@ -67,6 +67,10 @@ brew install eigen tbb
 cd ~
 git clone https://github.com/opencv/opencv
 git clone https://github.com/opencv/opencv_contrib
+cd opencv
+git  checkout 3.4.3
+cd ~/opencv_contrib
+git  checkout 3.4.3
 ```
 # 7. Configurar Opencv y Python mediante CMake
 ```
@@ -98,7 +102,7 @@ sudo make install
 # 9.Renombrar y crear enlace simbólico a Opencv y python
 ```
 deactivate
-cd /usr/local/python/cv2/python-3.7
+cd /usr/local/lib/python3.7/site-packages
 sudo mv cv2.cpython-37m-darwin.so cv2.so
 cd .virtualenvs/cv/lib/python3.7/site-packages/
 ln -s /usr/local/python/cv2/python-3.7/cv2.so cv2.so
