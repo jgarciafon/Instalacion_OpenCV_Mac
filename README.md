@@ -117,3 +117,7 @@ import cv2
 cv2.__version__
 deactivate
 ```
+Ruta donde hay programas de ejemplo
+```
+/usr/local/share/OpenCV/samples
+```
