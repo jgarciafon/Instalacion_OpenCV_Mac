@@ -104,8 +104,10 @@ sudo make install
 deactivate
 cd /usr/local/lib/python3.7/site-packages
 sudo mv cv2.cpython-37m-darwin.so cv2.so
-cd .virtualenvs/cv/lib/python3.7/site-packages/
-ln -s /usr/local/python/cv2/python-3.7/cv2.so cv2.so
+cd ~/.virtualenvs/cv/lib/python3.7/site-packages/
+ln -s /usr/local/lib/python3.7/site-packages/cv2.so cv2.so
+cd ~
+rm -rf opencv opencv_contrib/
 ```
 # 10. Verificar la version de Opencv
 ```
