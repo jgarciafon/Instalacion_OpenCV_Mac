@@ -19,7 +19,7 @@ Cerrar el editor nano
 ```
 source ~/.bash_profile
 ```
-# 3. Configurar Hombebrew
+# 3. Instalar Python3 con Homebrew
 ```
 brew install python3
 ```
