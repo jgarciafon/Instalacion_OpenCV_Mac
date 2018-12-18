@@ -49,7 +49,7 @@ workon cv
 Para saber que estamos dentro del entorno virtual creado veremos a la izquierda de la linea actual <(cv)>.
 Permanecemos centro del entorno virtual.
 ```
-pip install numpy
+pip3 install numpy
 ```
 Para salir del entorno virtual
 ```
